@@ -1,0 +1,232 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px solid black" width="1000px">
+        <tr>
+            <th colspan="3">A</th>
+            <th rowspan="3">B</th>
+            <th>C</th>
+        </tr>
+        <tr>
+            <th colspan="2">D</th>
+            <th>E</th>
+            <th>F</th>
+        </tr>
+        <tr>
+            <th rowspan="2">G</th>
+            <th colspan="2">H</th>
+            <th rowspan="2">I</th>
+        </tr>
+        <tr>
+            <th>J</th>
+            <th colspan="2">K</th>
+        </tr>
+    </table>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link {
+  color: red; /* unvisited link */
+}
+
+a:visited {
+  color: green; /* visited link */
+}
+
+a:hover {
+  color: hotpink; /* mouse over link */
+}
+
+a:active {
+  color: blue; /* selected link */
+}
+</style>
+</head>
+<body>
+
+<p><a href="https://www.google.com">This is an example link</a></p> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.relative-box {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  background-color: blue;
+}
+
+.fixed-box {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  background-color: green;
+}
+
+.sticky-box {
+  position: sticky;
+  top: 50px;
+  left: 50px;
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box"></div>
+  <div class="relative-box"></div>
+  <div class="fixed-box"></div>
+  <div class="sticky-box"></div>
+</div> -->
+
+<!-- 
+</body>
+</html>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .container
+      {
+      width: 100%;
+      height: 100vh;
+      }
+      .box{
+          width: 50px;
+          height: 50px;
+          background-color: aqua;
+          animation: box-motion 10s ease-in;
+          position: relative;
+      }
+      @keyframes box-motion {
+          0%{
+              top:0;
+              left:0;
+              background-color: aqua;
+          }
+          14%{
+              top:200px;
+              left:0;
+              background-color: blue;
+          }
+          28%{
+              top:200px;
+              left:200px;
+              background-color: red;
+          }
+          42%{
+              top:0;
+              left:200px;
+              background-color: purple;
+          }
+          56%{
+              top:0;
+              left:400px;
+              background-color: magenta;
+          }
+          70%{
+              top:200px;
+              left:400px;
+              background-color: maroon;
+          }
+          84%{
+              top:0;
+              left:200px;
+              background-color: yellow;
+          }
+          98%{
+              top:0;
+              left:0;
+              background-color: aqua;
+          }
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
+  -->
+
+  <script>
+        
+    function validateMobile() {
+        const mobileInput = document.getElementById("mobileInput").value;
+        const mobilePattern = /^(99|88)[0-9]{8}$/;
+
+        if (mobilePattern.test(mobileInput)) {
+            document.getElementById("mobileResult").textContent = "Valid Mobile Number";
+        } else {
+            document.getElementById("mobileResult").textContent = "Invalid Mobile Number";
+        }
+    }
+
+   
+    function validateCreditCard() {
+        const creditCardInput = document.getElementById("creditCardInput").value;
+        const creditCardPattern = /^[4-5][0-9]{15}$/;
+4551244558853568
+        if (!creditCardPattern.test(creditCardInput)) {
+            document.getElementById("creditCardResult").textContent = "Invalid Credit Card Number";
+            return;
+        }
+
+        const digits = creditCardInput.split('').map(Number);
+        let sum = 0;
+        let double = false;
+
+        for (let i = digits.length - 1; i >= 0; i--) {
+            let digit = digits[i];
+            if (double) {
+                digit *= 2;
+                if (digit > 9) {
+                    digit -= 9;
+                }
+            }
+            sum += digit;
+            double = !double;
+        }
+
+        if (sum % 10 === 0) {
+            document.getElementById("creditCardResult").textContent = "Valid Credit Card Number";
+        } else {
+            document.getElementById("creditCardResult").textContent = "Invalid Credit Card Number";
+        }
+    }
+</script>
+</body>
+</html>
